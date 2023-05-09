@@ -31,16 +31,25 @@ if [ $? -eq 0 ]; then
   fi;
 fi;
 
-echo "Path for ${1} is ${p}"
+DNAME=$(basename ${1})
+
+echo "Path for ${1} is ${p}. Name:${DNAME}"
 
 DL_DIR=${HOME}/archives/oe_sources/
 
-if [ ! -f "${p}/clone.sh" ]; then
-  curl -o ${p}/clone.sh https://raw.githubusercontent.com/tibbotech/repo-manifests/master/clone.sh
-  chmod 0755 ${p}/clone.sh
+f="clone.sh"
+if [ ! -f "${p}/${f}" ]; then
+  curl -o ${p}/${f} https://raw.githubusercontent.com/tibbotech/repo-manifests/master/${f}
+  chmod 0755 ${p}/${f}
 fi;
-
-DNAME=$(basename ${1})
+f="C1.docker_nosite.sh"
+if [ ! -f "${p}/${d}" ]; then
+  if [ ! -f "./${d}" ]; then
+    curl -o ${p}/${f} https://raw.githubusercontent.com/tibbotech/yocto_docker/main/${f}
+  else
+    install -m 0644 ./${d} ${p}/
+  fi;
+fi;
 
 # create the image if ARG2 is <dockerfilename>
 if [ -f "${2}" ]; then
