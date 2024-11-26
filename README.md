@@ -11,5 +11,6 @@ In the opened Docker console:
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
 ./clone.sh
+. ./layers/openembedded-core/oe-init-build-env ./build.tppg2/
 MACHINE=tppg2 bitbake mc:tppg2:img-tps-free
 ```
