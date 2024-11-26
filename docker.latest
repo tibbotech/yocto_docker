@@ -1,0 +1,4 @@
+FROM crops/poky:latest
+
+USER root
+RUN apt -y install libxslt1-dev doxygen libdigest-sha-perl curl
