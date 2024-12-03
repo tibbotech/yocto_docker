@@ -1,7 +1,8 @@
 #!/bin/sh
 
 #IMG="crops/poky"
-IMG="crops/poky:centos-7"
+#IMG="crops/poky:centos-7"
+IMG="crops/poky:latest"
 WDIR="workdir"
 
 hash docker
