@@ -14,3 +14,7 @@ git config --global user.name "Your Name"
 . ./layers/openembedded-core/oe-init-build-env ./build.tppg2/
 MACHINE=tppg2 bitbake mc:tppg2:img-tps-free
 ```
+clone.sh optionally accepts M=.. varibale to use certain manifest. Example:
+```
+M=sunplus ./clone.sh
+```
